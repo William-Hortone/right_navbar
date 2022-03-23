@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.image_content{
+    background-image: url('./images/laptop.jpg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.content{
+    height: 100vh;
+    width: 40px;
+    background: transparent;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.text_content{
+    width: 90%;
+    margin: auto;
+    height: auto;
+}
+.box_button{
+    height: 40px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 20px;
+    height: 1.5px ;
+    background: #210C36;
+}
+.bar::after, .bar::before{
+    display: block;
+    content:"";
+    width: 20px;
+    height: 1.5px;
+    background: #210C36;
+    position: absolute;
+    left: 0;
+}
+.bar::before{
+    transform: translateY(-5px);
+}
+.bar::after{
+    transform: translateY( 5px);
+} 
+.navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navbar li{
+    list-style-type: none;
+    padding-top: 20px;
+    cursor: pointer;
+}
+.open_content{
+    width: 80px;
+    height: 280px;
+    background: #ddd;
+    position:fixed;
+    top: 0;
+    transform: translateX(-100%);
+    transition:  .6s ease;
+    opacity: 0;
+}
+.logo{
+    height: 40px;
+    border-bottom: 1px solid #210C36;
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    height: 25px;
+    width: auto;
+}
+.logo h2{
+    font-size: .4rem;
+    font-family: 'Lucida Sans', sans-serif;
+}
+.open_navbar_links {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.open_navbar_links li {
+    padding-top: 20px;
+    list-style-type: none;
+}
+.open_navbar_links a{
+    text-decoration: none;
+}
+.open_content.show{
+    transform: translateX(41px);
+    opacity: 1;
+}
+.show .bar::before {
+    transform: rotate( 45deg);
+    transition: all 1s ease;
+} 
+.show .bar::after{
+    transform: rotate( -45deg);
+    transition: all 1s ease;
+} 
+.show .bar{
+    width: 0;
+    transition:  1s ease;
+}
+.project_option, .setting_option{
+    display: none;
+    width: 90px;
+    height:280px;
+    background: #e9ddc46c;
+    position: absolute;
+    top: 40px;
+    margin-left:80px;
+}
+.project:hover .project_option,
+.setting:hover .setting_option  {
+
+    display: block;
+}
+.navbar .fa-solid:hover{
+    padding-left: 10px;
+    transform: scale(1.5);
+    color:#000;
+    transition: all .3s ease-in-out;
+}
+.active, .open_content a:hover{
+    background: #551A8B;
+    height: 30px;
+    width: 100%;
+    padding: 5px 10px;
+    transition: all .3s ease;
+    color: #ddd;
+}
+.fa-angle-right{
+    font-size: 12px;
+}
+.blur{
+    filter: blur(3px);
+    transition-property: -webkit-filter;
+    transition-duration: .5s;
+}
